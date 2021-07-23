@@ -41,10 +41,30 @@ const libros = [{
 
 
 //Tu codigo JS va acá
+let selectUsuario = document.getElementById('autor');
+
+function filtrarAutor() {
+    for (let i = 0; i <= libros.length; i++) {
+            let title = libros[i].titulo
+            let author = libros[i].autor
+            let both = console.log(`${title} ${author}`)
+            return both
+    }
+}
+
+let mostrar = filtrarAutor()
+
+console.dir(libros);
+console.log(mostrar);
 
 
 
 
+
+
+
+// let autorFiltrado = arreglo.filter(elem => elem.autor == autor)
+// return autorFiltrado;
 
 
 
