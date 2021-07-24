@@ -41,29 +41,50 @@ const libros = [{
 
 
 //Tu codigo JS va acá
+// DOM Variables
 let selectUsuario = document.getElementById('autor');
+let divLibro = document.getElementById('libros');
 
-function filtrarAutor() {
-    for (let i = 0; i <= libros.length; i++) {
-            let title = libros[i].titulo
-            let author = libros[i].autor
-            let both = console.log(`${title} ${author}`)
-            return both
+// Filter author based on user's choice
+function filtrarAutor(arr, author) {
+    // let autorFiltrado = arr.filter((book) => {
+    //     return book.autor == author
+    // })
+    let newArray = []
+    // en loop todo se ejecuta varias veces, 
+    // variables deben quedar por fuera o si no crea
+    // una nueva variable cada vez que recorre el array
+    for (let i = 0; i < arr.length; i++) {
+            let escritor = arr[i].autor
+            if (escritor == author) {
+                newArray.push(arr[i]);
+            }
     }
+    return newArray
 }
 
-let mostrar = filtrarAutor()
+// Display that author's information
+function mostrarFiltrados() {
+    let autorSelect = filtrarAutor(libros, selectUsuario.value)
+    console.log(autorSelect)
+    autorSelect.map((item) => {
+            divLibro.innerHTML = `<div class="card">
+            <img src="${item.url}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">${item.titulo}</h5>
+              <p class="card-text">${item.precio}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>`
+    })
+}
 
-console.dir(libros);
-console.log(mostrar);
 
 
 
 
 
-
-
-// let autorFiltrado = arreglo.filter(elem => elem.autor == autor)
+// let autorFiltrado = arreglo.filter(elem => elem.autor === autor)
 // return autorFiltrado;
 
 

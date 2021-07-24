@@ -17,9 +17,9 @@
           <div>
             <p class="h4 text-light">Categoria</p>
             <div>
-              <label for="autor" onchange="filtrarAutor()" class="h6 text-light">Autor</label>
+              <label for="autor" class="h6 text-light">Autor</label>
               <!-- lista desplegable de los autores -->
-              <select id="autor" class="custom-select">
+              <select id="autor" onchange="mostrarFiltrados()" class="custom-select">
                 <option value="" disabled selected>---</option>
                 <option value="Gabriel Garcia Marquez">Gabriel Garcia Marquez</option>
                 <option value="William Golding">William Golding</option>
@@ -35,6 +35,7 @@
 
       <!-- Setear el resultado de la busqueda acá -->
     <div id="libros" class="container mx-5 px-5 d-flex flex-column align-items-center mt-5"></div>
+
 
 
 
